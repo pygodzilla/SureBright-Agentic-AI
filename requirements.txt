@@ -36,3 +36,19 @@ pytest>=7.4.0
 pytest-asyncio>=0.21.0
 pytest-cov>=4.1.0
 httpx>=0.25.0
+
+# ============================================
+# FREE OPEN-SOURCE LLM PROVIDERS
+# ============================================
+
+# Groq (RECOMMENDED - Best free tier)
+groq>=0.4.0
+
+# Hugging Face (Free tier)
+# huggingface-hub>=0.19.0
+
+# Cohere (Free trial)
+# cohere>=4.0.0
+
+# Mistral AI (Free tier)
+# mistralai>=0.0.0

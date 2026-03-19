@@ -72,7 +72,16 @@ SureBright-Agentic-AI/
 ### Prerequisites
 
 - Python 3.10+
-- OpenAI API key (or compatible LLM API)
+- **FREE LLM API Key** (Groq, HuggingFace, Cohere, or Mistral)
+
+### FREE LLM Providers (No Credit Card Required)
+
+| Provider | Free Tier | Models | Sign Up |
+|----------|-----------|--------|---------|
+| **Groq** | 30 req/min, 14,400/day | llama-3.3-70b-versatile, mixtral-8x7b | [console.groq.com](https://console.groq.com) |
+| **Hugging Face** | Limited hours | meta-llama/Llama-3.3-70B | [huggingface.co](https://huggingface.co) |
+| **Cohere** | 1000 tokens/mo | command-r-plus | [cohere.com](https://cohere.com) |
+| **Mistral** | Free tier | mistral-large-latest | [mistral.ai](https://mistral.ai) |
 
 ### Installation
 
@@ -95,20 +104,25 @@ cp .env.example .env
 
 ### Configuration
 
-Create a `.env` file:
+Create a `.env` file with a **free** LLM provider:
 
 ```env
-# OpenAI Configuration
-OPENAI_API_KEY=sk-your-api-key-here
-OPENAI_MODEL=gpt-4-turbo-preview
+# LLM Provider Selection (FREE options)
+LLM_PROVIDER=groq
 
-# Optional: Anthropic for Claude
-ANTHROPIC_API_KEY=sk-ant-your-key-here
+# Groq Configuration (RECOMMENDED - No credit card)
+GROQ_API_KEY=your-groq-api-key-here
+GROQ_MODEL=llama-3.3-70b-versatile
+
+# Hugging Face (Alternative free option)
+HF_TOKEN=hf_your-token-here
+HF_MODEL=meta-llama/Llama-3.3-70B-Instruct
 
 # Vector Database
 CHROMA_DB_PATH=./data/chroma_db
+EMBEDDING_MODEL=sentence-transformers/all-MiniLM-L6-v2
 
-# Evaluation (LangFuse)
+# Evaluation (LangFuse - free tier available)
 LANGFUSE_PUBLIC_KEY=your-langfuse-public-key
 LANGFUSE_SECRET_KEY=your-langfuse-secret-key
 ```
@@ -204,8 +218,9 @@ LLMOps practices for production quality:
 | Component | Technology |
 |-----------|------------|
 | Agent Orchestration | LangGraph, LangChain |
-| LLM | OpenAI GPT-4, Anthropic Claude |
+| **LLM** | **Groq** (free), HuggingFace, Cohere, Mistral |
 | Vector Store | ChromaDB |
+| Embeddings | sentence-transformers (free) |
 | API | FastAPI, Uvicorn |
 | Schema Validation | Pydantic v2 |
 | Evaluation | LangFuse, TruLens |
