@@ -1,7 +1,7 @@
 """Decision making tool for claims adjudication."""
 
 from typing import Optional
-from pydantic import Field
+from pydantic import BaseModel, Field
 from langchain_core.tools import BaseTool
 from langchain_core.callbacks import CallbackManagerForToolRun
 from langchain_openai import ChatOpenAI

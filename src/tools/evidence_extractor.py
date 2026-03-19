@@ -1,7 +1,7 @@
 """Evidence extraction tool for claims processing."""
 
 from typing import Optional
-from pydantic import Field
+from pydantic import BaseModel, Field
 
 from langchain_core.tools import BaseTool
 from langchain_core.callbacks import CallbackManagerForToolRun
