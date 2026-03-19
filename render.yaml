@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: surebright-api
+    runtime: docker
+    repo: https://github.com/pygodzilla/SureBright-Agentic-AI
+    branch: main
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /health
+    envVars:
+      - key: LLM_PROVIDER
+        value: cohere
+      - key: COHERE_API_KEY
+        sync: false
+    regions:
+      - ohio
+      - virginia
